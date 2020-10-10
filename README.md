@@ -23,3 +23,6 @@ The main idea leading to the construction of positive definite kernels from a gi
 [2]   David Haussler. Convolution kernels on discrete structures. Technical Report UCS-CRL-99-10, University of California at Santa Cruz, Santa Cruz, CA, USA, 1999.
 
 [3]   Pierre-François Marteau and Sylvie Gibet. On Recursive Edit Distance Kernels with Application to Time Series Classification. IEEE Transactions on Neural Networks and Learning Systems, pages 1–14, June 2014. 14 pages.
+
+## see also 
+[KDTW](https://github.com/pfmarteau/KDTW), a regularized Dynamic Time Warping Kernel
