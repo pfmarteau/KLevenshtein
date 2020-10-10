@@ -28,7 +28,7 @@ import numpy as np
 #   PAGES = {1-14},
 #   YEAR = {2014},
 #   MONTH = Jun,
-#   KEYWORDS = {Elastic distance, Time warp kernel, Time warp inner product, Definiteness, Time series classification, SVM},
+#   KEYWORDS = {Elastic distance, Time warp kernel, Time warp inner product, Edit distance kernel, Definiteness, Time series classification, SVM},
 #   DOI = {10.1109/TNNLS.2014.2333876},
 #   URL = {http://hal.inria.fr/hal-00486916}
 # } 
