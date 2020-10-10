@@ -1,4 +1,4 @@
-# kLevenshtein: A Regularized Levenshtein Kernel
+# kLevenshtein: a Regularized String Kernel derived from the Levenshtein's distance.
 
 **kLevenshtein_cdist** is a python3.* implementation of kLevenshtein, a similarity measure dedicated to string matching. KLevenshtein is derived from Levenshtein's distance while ensuring the property that kLevenshtein(.,.) is a positive definite kernel (homogeneous to an inner product in the so-called Reproducing Kernel Hilbert Space). The procedure to derive this kernelization of Levenshtein's distance is detailed in Marteau & Gibet 2014 [3]. kLevenshtein is a R-Convolution kernel as defined in [2]. 
 
