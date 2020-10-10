@@ -124,4 +124,4 @@ if __name__ == '__main__':
         for j in range(i+1, len(L)):
             GLev[i,j]=Levenshtein.distance(L[i],L[j])
             GKLev[i,j]=kLevenshtein(L[i],L[j],sigma=sigma,epsilon=epsilon)
-            print("[%s] v.s. [%s] | lev= %d | klev= %1.3f" % (L[i], L[j], GLev[i,j], GKLev[i,j]))
+            print("[%s] v.s. [%s] | lev= %d | klev= %1.4f" % (L[i], L[j], GLev[i,j], GKLev[i,j]))
