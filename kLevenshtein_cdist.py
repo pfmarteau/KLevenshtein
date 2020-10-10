@@ -103,17 +103,25 @@ def str2array(s):
     return np.array(out)
 
 # Simple test
+''' This example shows that it is possible by selecting a high epsilon meta-parameter to force the string kernel to evaluate not only 
+the global alignments of the strings but also the alignments of all matching substrings. Hence, for Klevenshtein the maximum similarity is reached
+for  the strings [the little big man] and [the big little man], while for the Levenshtein distance, the minimal distance is reached for strings
+[the little big man] and ["the little mairmaid"] 
+'''
 if __name__ == '__main__':
     import Levenshtein
     
     A = "the little mairmaid"
-    B = "the old man and the sea"
-    C = "an old mairmaid at sea"
-
-    print("kLevenshtein(A,B)=", kLevenshtein(A,B,.1))
-    print("kLevenshtein(A,C)=", kLevenshtein(A,C,.1))
-    print("kLevenshtein(B,C)=", kLevenshtein(B,C,.1))
-    
-    print("Levenshtein(A,B)=", Levenshtein.distance(A,B))
-    print("Levenshtein(A,C)=", Levenshtein.distance(A,C))
-    print("Levenshtein(B,C)=", Levenshtein.distance(B,C))
+    B = "the little big man"
+    C = "the big little man"
+    D = "an old mairmaid at sea"
+    sigma=5
+    epsilon=1
+    L=[A,B,C,D]
+    GLev=np.zeros((len(L),len(L)))
+    GKLev=np.zeros((len(L),len(L)))
+    for i in range(len(L)):
+        for j in range(i+1, len(L)):
+            GLev[i,j]=Levenshtein.distance(L[i],L[j])
+            GKLev[i,j]=kLevenshtein(L[i],L[j],sigma=sigma,epsilon=epsilon)
+            print("[%s] v.s. [%s] | lev= %d | klev= %1.3f" % (L[i], L[j], GLev[i,j], GKLev[i,j]))
