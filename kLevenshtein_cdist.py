@@ -105,8 +105,8 @@ def str2array(s):
 # Simple test
 ''' This example shows that it is possible by selecting a high epsilon meta-parameter to force the string kernel to evaluate not only 
 the global alignments of the two compared strings but also the alignments of all matching substrings. Hence, for Klevenshtein the maximum similarity 
-is reached for  the strings *[the little big man]* and *[the big little man]*, while for the Levenshtein distance, the minimal distance is reached for the strings
-*[the little big man]* and *["the little mairmaid"]*. This demonstrates that the KLevenshtein kernel can be more resilinet than the Levenshtein's distance to 
+is reached for  the strings [the little big man] and [the big little man], while for the Levenshtein distance, the minimal distance is reached for the strings
+[the little big man] and ["the little mairmaid"]. This demonstrates that the KLevenshtein kernel can be more resilinet than the Levenshtein's distance to 
 string permutations.
 '''
 if __name__ == '__main__':
