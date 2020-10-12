@@ -93,8 +93,10 @@ def kLevenshtein(A, B, sigma = .1, epsilon = 1e-3):
     A=str2array(A)
     B=str2array(B)
     distance = cdist(A, B, 'hamming')
-    e=(np.exp(-1.0/sigma)+epsilon)/(3*(1+epsilon))
-    local_kernel = e*distance
+    e0=1.0/3.0
+    e1=(np.exp(-1.0/sigma)+epsilon)/(3*(1+epsilon))
+    local_kernel=e1*distance
+    local_kernel[local_kernel==0]=e0
     return kLevenshtein_lk(A,B,local_kernel)
 
 def str2array(s):
