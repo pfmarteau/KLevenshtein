@@ -39,10 +39,8 @@ import numpy as np
 # input local_kernel: matrix of local kernel evaluations
 '''
 def kLevenshtein_lk(A, B, local_kernel):
-    d=np.shape(A)[1]
-    Z=[np.zeros(d)]
-    A = np.concatenate((Z,A), axis=0)
-    B = np.concatenate((Z,B), axis=0)
+    A = np.concatenate(([[0]],A), axis=0)
+    B = np.concatenate(([[0]],B), axis=0)
     [la,d] = np.shape(A)
     [lb,d] = np.shape(B)
     DP = np.zeros((la,lb))
@@ -74,8 +72,8 @@ def kLevenshtein_lk(A, B, local_kernel):
                 DP1[i,j] = DP1[i-1,j-1] * lcost + DP1[i-1,j] * DP2[i] + DP1[i,j-1]  *DP2[j]
             else:
                 DP1[i,j] = DP1[i-1,j] * DP2[i] + DP1[i,j-1] * DP2[j];
-    DP = DP + DP1;
-    return DP[n-1,m-1]
+
+    return DP[n-1,m-1]+DP1[n-1,m-1];
 
 
 
@@ -90,13 +88,13 @@ def kLevenshtein_lk(A, B, local_kernel):
 # output similarity: similarity between A and B (the higher, the more similar)
 '''
 def kLevenshtein(A, B, sigma = .1, epsilon = 1e-3):
-    A=str2array(A)
-    B=str2array(B)
+    A = str2array(A)
+    B = str2array(B)
     distance = cdist(A, B, 'hamming')
-    e0=1.0/3.0
-    e1=(np.exp(-1.0/sigma)+epsilon)/(3*(1+epsilon))
-    local_kernel=e1*distance
-    local_kernel[local_kernel==0]=e0
+    e0 = 1.0/3.0
+    e1= (np.exp(-1.0/sigma)+epsilon)/(3.0*(1.0+epsilon))
+    local_kernel = e1*distance
+    local_kernel[local_kernel == 0.0] = e0
     return kLevenshtein_lk(A,B,local_kernel)
 
 def str2array(s):
