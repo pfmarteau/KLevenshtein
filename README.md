@@ -1,6 +1,15 @@
 # kLevenshtein: a Regularized String Kernel derived from the Levenshtein's distance.
 
-**kLevenshtein_cdist** is a python3.* implementation of kLevenshtein, a similarity measure dedicated to string matching. KLevenshtein is derived from Levenshtein's distance while ensuring the property that kLevenshtein(.,.) is a positive definite kernel (homogeneous to an inner product in the so-called Reproducing Kernel Hilbert Space). The procedure to derive this kernelization of Levenshtein's distance is detailed in Marteau & Gibet 2014 [3]. kLevenshtein is a R-Convolution kernel as defined in [2]. 
+**kLevenshtein_cdist** is a python3.* implementation of kLevenshtein, a similarity measure dedicated to string matching. 
+kLevenshtein_c directory contains a C biding of kLevenshtein, nearly 40 times faster that kLevenshtein_cdist implementation which is much faster than kdtw.py. To install the C version, just execute inside this subdirectory:
+
+python3 setup.py install --user
+
+and to test:
+
+python3 test.py
+
+KLevenshtein is derived from Levenshtein's distance while ensuring the property that kLevenshtein(.,.) is a positive definite kernel (homogeneous to an inner product in the so-called Reproducing Kernel Hilbert Space). The procedure to derive this kernelization of Levenshtein's distance is detailed in Marteau & Gibet 2014 [3]. kLevenshtein is a R-Convolution kernel as defined in [2]. 
 
 kLevenshtein comes with two smothing meta-parameters entering into the computation of the local kernel: 
 
