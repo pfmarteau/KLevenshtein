@@ -16,6 +16,17 @@ kLevenshtein comes with two smothing meta-parameters entering into the computati
 * *sigma* is used to scale the local distance computations (default value is set to 1.0).
 * *epsilon* is used to avoid the vanishing of products of local kernel values (assimilated to probabilities) evaluated along the alignment paths (default value is set to 1e-3).
 
+## Difference with Levenshtein distance
+Klevenshtein is more resilient to sub-sequence flipping as shown in the following example
+
+| *String1*	            |	*String2*	               | *Levenshtein distance*	|	*Klevenshtein similarity*	|
+|---------------------|:----------------------:|---------------------:|------------------------:|
+| the little big man	|	the big little man	   | 8	                  |	0.0071	                |
+| the little big man	|	the little mairmaid	   | 6	                  |	0.0065	                |
+| the little mairmaid	|	the big little man	   | 10	                  |	0.0053	                |
+| the little mairmaid	|	an old sailboat at sea |	20	                |	0.0025	                |
+
+
 ## Algorithmic complexity
 The algorithmic complexity of kLevenshtein is O(N^2), where N is the length of the longest of the two time series given in entry, and when no corridor size is specified. This complexity drops down to O(C.N) when a symmetric corridor of size C is exploited. 
 
