@@ -21,8 +21,8 @@ Klevenshtein is more resilient to sub-sequence flipping as shown in the followin
 
 | *String1*	          |	*String2*	             | *Levenshtein distance*|	*Klevenshtein similarity*	|
 |---------------------|------------------------|:---------------------:|:--------------------------:|
-| the little big man	|	the big little man	   | *8*	                   |	*0.0071*	                  |
-| the little big man	|	the little mairmaid	   | *6*	                   |	*0.0065*	                  |
+| the little big man	|	the big little man	   | *8*	                 |	*0.0071*	                |
+| the little big man	|	the little mairmaid	   | *6*	                 |	*0.0065*	                |
 | the little mairmaid	|	the big little man	   | 10	                   |	0.0053	                  |
 | the little mairmaid	|	an old sailboat at sea |	20	                 |	0.0025	                  |
 
