@@ -17,7 +17,7 @@ kLevenshtein comes with two smothing meta-parameters entering into the computati
 * *epsilon* is used to avoid the vanishing of products of local kernel values (assimilated to probabilities) evaluated along the alignment paths (default value is set to 1e-3).
 
 ## Difference with Levenshtein distance
-Klevenshtein is more resilient to sub-sequence flipping as shown in the following example
+KLevenshtein is more resilient to sub-sequence flipping as shown in the following example
 
 | *String1*	          |	*String2*	             | *Levenshtein distance*|	*Klevenshtein similarity*	|
 |---------------------|------------------------|:---------------------:|:--------------------------:|
