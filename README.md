@@ -45,4 +45,4 @@ The main idea leading to the construction of positive definite kernels from a gi
 [3]   Pierre-François Marteau and Sylvie Gibet. On Recursive Edit Distance Kernels with Application to Time Series Classification. IEEE Transactions on Neural Networks and Learning Systems, pages 1–14, June 2014. 14 pages.
 
 ## see also 
-[KDTW](https://github.com/pfmarteau/KDTW), a regularized Dynamic Time Warping Kernel
+[KDTW](https://github.com/pfmarteau/KDTW), a regularized Dynamic Time Warping (DTW) Kernel
