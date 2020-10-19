@@ -2,7 +2,7 @@
 
 **kLevenshtein_cdist.py** is a python3.* implementation of kLevenshtein, a similarity measure dedicated to string matching. 
 
-**kLevenshtein_c** directory contains a C biding of kLevenshtein, nearly 40 times faster that kLevenshtein_cdist implementation which is much faster than kdtw.py. To install the C version, just execute inside the K_Levenshtein subdirectory:
+**kLevenshtein_c** directory contains a C biding of kLevenshtein, nearly 40 times faster that kLevenshtein_cdist implementation. To install the C version, just execute inside the K_Levenshtein subdirectory:
 > python3 setup.py install --user
 
 and to test:
@@ -32,6 +32,7 @@ The algorithmic complexity of kLevenshtein is O(N^2), where N is the length of t
 
 ## Implementations
 * kLevenshtein_cdist.py uses numpy and scipy.spatial.distance.cdist to accelerate the computation of the local kernel matrix
+* The C/Python binding implementation in **kLevenshtein_c** directory is 40 times faster.
 
 ## Interpretation
 The main idea leading to the construction of positive definite kernels from a given elastic distance used to match two time series is simply the following: instead of keeping only one of the best alignment paths, the new kernel sums up the costs of all the existing sub-sequence alignment paths with some smoothing factor that will favor good alignments while penalizing bad alignments. In addition, this smoothing factor can be optimized. Thus, basically we replace the min (or max) operator by a summation operator and introduce a symmetric corridor function (the function h in the recursive equation above) to optionally limit the summation and the computational cost. Then we add a regularizing recursive term (Kxx) such that the proof of the positive definiteness property can be understood as a direct consequence of the Haussler’s convolution theorem  [2]. Please see  [3] for the details.
