@@ -1,6 +1,6 @@
 # kLevenshtein: a Regularized String Kernel derived from the Levenshtein's distance.
 
-**kLevenshtein_cdist** is a python3.* implementation of kLevenshtein, a similarity measure dedicated to string matching. 
+**kLevenshtein_cdist.py** is a python3.* implementation of kLevenshtein, a similarity measure dedicated to string matching. 
 
 **kLevenshtein_c** directory contains a C biding of kLevenshtein, nearly 40 times faster that kLevenshtein_cdist implementation which is much faster than kdtw.py. To install the C version, just execute inside the K_Levenshtein subdirectory:
 > python3 setup.py install --user
