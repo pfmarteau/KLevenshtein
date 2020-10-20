@@ -1,6 +1,6 @@
 # kLevenshtein: a Regularized String Kernel derived from the Levenshtein's distance.
 
-**kLevenshtein_cdist.py** is a python3.* implementation of kLevenshtein, a similarity measure dedicated to string matching. 
+**kLevenshtein.py** is a pure python3.* implementation of kLevenshtein, a similarity measure dedicated to string matching. 
 
 **kLevenshtein_c** directory contains a C biding of kLevenshtein, nearly 40 times faster that kLevenshtein_cdist implementation. To install the C version, just execute inside the K_Levenshtein subdirectory:
 > python3 setup.py install --user
@@ -21,10 +21,10 @@ KLevenshtein is more resilient to sub-sequence flipping as shown in the followin
 
 | *String1*	          |	*String2*	             | *Levenshtein distance*|	*Klevenshtein similarity*	|
 |---------------------|------------------------|:---------------------:|:--------------------------:|
-| the little big man	|	the big little man	   | **8**	               |	**0.0071**	              |
-| the little big man	|	the little mairmaid	   | **6**	               |	**0.0065**	              |
-| the little mairmaid	|	the big little man	   | 10	                   |	0.0053	                  |
-| the little mairmaid	|	an old sailboat at sea |	20	                 |	0.0025	                  |
+| the little big man	|	the big little man	   | **8**	               |	**0.0054**	              |
+| the little big man	|	the little mairmaid	   | **6**	               |	**0.0048**	              |
+| the little mairmaid	|	the big little man	   | 10	                   |	0.0045	                  |
+| the little mairmaid	|	an old sailboat at sea |	20	                 |	0.0020	                  |
 
 
 ## Algorithmic complexity
